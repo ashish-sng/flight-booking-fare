@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./FlightSearch.css";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const FlightSearch = () => {
   const [source, setSource] = useState("");
@@ -9,6 +10,7 @@ const FlightSearch = () => {
   const [passengers, setPassengers] = useState(1);
   const [flights, setFlights] = useState([]);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSourceChange = (event) => {
     setSource(event.target.value);
@@ -34,14 +36,24 @@ const FlightSearch = () => {
       const formattedDate = formatDate(departureDate);
 
       const response = await axios.get(
-        `http://localhost:4000/flights?source=${source}&destination=${destination}&departureDate=${formattedDate}`
+        `http://localhost:4000/flights?source=${source}&destination=${destination}&departureDate=${formattedDate}`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
-
-      console.log(response.data);
 
       setFlights(response.data);
       setError("");
     } catch (error) {
+      //Forbidden
+      if (error.response.status === 403) {
+        setError("Please login to search flights.");
+        setFlights([]);
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
+        return;
+      }
       setError("Error searching flights. Please try again.");
       setFlights([]);
     }
@@ -50,12 +62,12 @@ const FlightSearch = () => {
   const formatDate = (dateString) => {
     const [year, month, day] = dateString.split("-");
     return `${year}/${month}/${day}`;
-    };
-    
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        window.location.href = "/";
-    };
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
 
   return (
     <div className="flight-search-container">
