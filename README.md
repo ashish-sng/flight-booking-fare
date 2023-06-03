@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Flight Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Flight Search App is a web application that allows users to search for available flights based on their source and destination cities. It provides users with a convenient way to find flights and obtain relevant information such as departure time, flight name, and duration.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Flight Search:** Users can enter their source and destination cities to search for available flights.
+- **Date Filtering:** Users can filter flights based on the desired departure date.
+- **Flight Details:** The app displays detailed information about each flight, including the flight name, departure time, and duration.
+- **Dynamic Pricing:** The app calculates the total fare based on the selected flight and the number of passengers.
+- **User Authentication:** Users can register and log in to the app to access the flight search functionality.
+- **User-Friendly Interface:** The app provides an intuitive and responsive user interface for a seamless flight search experience.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:** React.js, HTML, CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **API Communication:** Axios
+- **Routing:** React Router
+- **Authentication:** JWT (JSON Web Tokens)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To get started with the Flight Search App, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository: `git clone https://github.com/ashish-sng/flight-booking-fare.git`
+2. Install the dependencies: `npm install`
+3. Set up the backend:
+   - Create a MongoDB database and update the connection details in the backend configuration.
+   - Start the backend server: `npm start`
+4. Set up the frontend:
+   - Update the backend API URL in the frontend configuration.
+   - Start the frontend development server: `npm start`
+5. Open your browser and navigate to `http://localhost:3000` to access the Flight Search App.
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project follows a client-server architecture, with the frontend and backend components separated into their respective directories. Here's a brief overview of the project structure:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `/backend`: Contains the server-side code written in Node.js and Express.js.
+- `/frontend`: Contains the client-side code written in React.js.
+- `/components`: Contains reusable React components used in the frontend.
+- `/routes`: Contains the API routes and endpoints for the backend.
+- `/models`: Contains the data models and schemas used in the backend.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributions
 
-### `npm run eject`
+Contributions to the Flight Search App are welcome! If you encounter any issues or have suggestions for improvement, please feel free to submit a pull request or open an issue in the GitHub repository.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).
