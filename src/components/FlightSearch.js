@@ -1,7 +1,25 @@
 import React, { useState } from "react";
 import "./FlightSearch.css";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+const cities = [
+  "Mumbai",
+  "Delhi",
+  "Bangalore",
+  "Chennai",
+  "Hyderabad",
+  "Kolkata",
+  "Ahmedabad",
+  "Pune",
+  "Jaipur",
+  "Lucknow",
+  "Kochi",
+  "Goa",
+  "Guwahati",
+  "Bhubaneswar",
+  "Amritsar",
+];
 
 const FlightSearch = () => {
   const [source, setSource] = useState("");
@@ -69,6 +87,9 @@ const FlightSearch = () => {
     window.location.href = "/";
   };
 
+  const minDate = "2023-06-11";
+  const maxDate = "2023-07-31";
+
   return (
     <div className="flight-search-container">
       <div className="flight-search">
@@ -79,22 +100,34 @@ const FlightSearch = () => {
       </div>
       <form onSubmit={handleSearch}>
         <label htmlFor="source">Source:</label>
-        <input
-          type="text"
+        <select
           id="source"
           value={source}
           onChange={handleSourceChange}
-          className="input-field"
-        />
+          className="select-input-field"
+        >
+          <option value="">Select Source City</option>
+          {cities.map((city) => (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          ))}
+        </select>
 
         <label htmlFor="destination">Destination:</label>
-        <input
-          type="text"
+        <select
           id="destination"
           value={destination}
           onChange={handleDestinationChange}
-          className="input-field"
-        />
+          className="select-input-field"
+        >
+          <option value="">Select Destination City</option>
+          {cities.map((city) => (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          ))}
+        </select>
 
         <label htmlFor="departureDate">Departure Date:</label>
         <input
@@ -102,6 +135,8 @@ const FlightSearch = () => {
           id="departureDate"
           value={departureDate}
           onChange={handleDepartureDateChange}
+          min={minDate}
+          max={maxDate}
           className="input-field"
         />
 

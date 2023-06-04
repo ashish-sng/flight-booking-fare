@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Register = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -41,15 +40,11 @@ const Register = ({ handleLogin }) => {
             autoClose: 2000,
           }
         );
-        setError(
-          "Email address already registered. Please choose a different one."
-        );
       } else {
         toast.error("Error registering user. Please try again.", {
           position: "bottom-right",
           autoClose: 2000,
         });
-        setError("Error registering user. Please try again.");
       }
     }
   };
@@ -77,8 +72,6 @@ const Register = ({ handleLogin }) => {
         </button>
       </form>
       <ToastContainer />
-
-      {/* {error && <p>{error}</p>} */}
     </div>
   );
 };

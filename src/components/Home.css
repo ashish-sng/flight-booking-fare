@@ -1,26 +1,26 @@
-.home{
-    height: 80vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.home {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-#signup{
-    height: 7vh;
-    width: 20vw;
-    background-color: rgb(201, 201, 209);
-    color: white;
-    border: none;
-    box-shadow: 10px 10px 10px 10px white;
+#signup {
+  height: 7vh;
+  width: 20vw;
+  background-color: rgb(201, 201, 209);
+  color: white;
+  border: none;
+  box-shadow: 10px 10px 10px 10px white;
 }
 
-#login{
-    height: 7vh;
-    width: 20vw;
-    background-color: rgb(201, 201, 209);
-    color: white;
-    border: none;
-    box-shadow: 10px 10px 10px 10px white;
+#login {
+  height: 7vh;
+  width: 20vw;
+  background-color: rgb(201, 201, 209);
+  color: white;
+  border: none;
+  box-shadow: 10px 10px 10px 10px white;
 }

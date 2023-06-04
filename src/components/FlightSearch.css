@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-.flight-search{
+.flight-search {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@
   display: inline;
 }
 
-.logout-button{
+.logout-button {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -42,8 +42,17 @@ label {
   font-weight: bold;
 }
 
+.select-input-field {
+  width: 94%;
+  padding: 2vh;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
 .input-field {
-  width: 100%;
+  width: 90%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
