@@ -82,6 +82,11 @@ const FlightSearch = () => {
     return `${year}/${month}/${day}`;
   };
 
+  const userFormatDate = (dateString) => {
+    const [year, month, day] = dateString.split("/");
+    return `${day}/${month}/${year}`;
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
@@ -167,7 +172,7 @@ const FlightSearch = () => {
                   {flight.flightName} : ₹{parseInt(flight.fare) * passengers}
                 </p>
                 <p className="flight-info">
-                  Departure Date: {flight.departureDate}
+                  Departure Date: {userFormatDate(flight.departureDate)}
                 </p>
                 <p className="flight-info">
                   Flight duration: {flight.duration}hrs
