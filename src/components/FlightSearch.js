@@ -88,7 +88,7 @@ const FlightSearch = () => {
   };
 
   const minDate = "2023-06-11";
-  const maxDate = "2023-07-31";
+  const maxDate = "2023-08-03";
 
   return (
     <div className="flight-search-container">
