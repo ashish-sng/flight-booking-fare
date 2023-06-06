@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { loginApi } from "../api/auth";
 
 const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
@@ -22,10 +22,7 @@ const Login = ({ handleLogin }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/login", {
-        email,
-        password,
-      });
+      const response = await loginApi(email, password);
       localStorage.setItem("token", response.data.token);
       toast.success("Login successful.");
       setTimeout(() => {

@@ -7,6 +7,17 @@
   overflow: hidden;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 #signup {
   height: 7vh;
   width: 20vw;
@@ -14,6 +25,8 @@
   color: white;
   border: none;
   box-shadow: 10px 10px 10px 10px white;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 #login {
@@ -23,4 +36,6 @@
   color: white;
   border: none;
   box-shadow: 10px 10px 10px 10px white;
+  font-size: 1rem;
+  font-weight: 700;
 }

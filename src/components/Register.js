@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Register.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { registerApi } from "../api/auth";
 
 const Register = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
@@ -22,10 +22,7 @@ const Register = ({ handleLogin }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/register", {
-        email,
-        password,
-      });
+      const response = await registerApi(email, password);
 
       toast.success("Registered Successfully");
       setTimeout(() => {

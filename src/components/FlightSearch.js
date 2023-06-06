@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./FlightSearch.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { searchFlightsApi } from "../api/flight";
 
 const cities = [
   "Mumbai",
@@ -51,17 +51,13 @@ const FlightSearch = () => {
     event.preventDefault();
 
     try {
+      setFlights([]);
+      setError('Loading...');
       const formattedDate = formatDate(departureDate);
-
-      const response = await axios.get(
-        `http://localhost:4000/flights?source=${source}&destination=${destination}&departureDate=${formattedDate}`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      );
+      const response = await searchFlightsApi(source, destination, formattedDate);
 
       setFlights(response.data);
-      setError("");
+      setError(response.data?.length ? "" : "No flights found");
     } catch (error) {
       //Forbidden
       if (error.response.status === 403) {
