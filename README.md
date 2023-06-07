@@ -1,6 +1,10 @@
 # Flight Search App
 
-<h1> A few example picutres are attached below as the data is genereated because no free apis were available that were free and provide data on fares so it might be difficult to find flights at times in this generated data.<h1>
+<h1>Demo Video of the app.</h1>
+
+https://github.com/ashish-sng/flight-booking-fare/assets/68745052/e19ed16b-726e-4ade-a401-e3ef4abe673e
+
+<h1>Also a few example picutres are attached below as the data is genereated because no free apis were available that were free and provide data on fares so it might be difficult to find flights at times in this generated data.<h1>
 
 ![screencapture-ashishsng-flight-fare-app-netlify-app-flights-2023-06-06-22_19_04](https://github.com/ashish-sng/flight-booking-fare/assets/68745052/97273fe0-0441-4534-a7d6-312947a9d132)
 
